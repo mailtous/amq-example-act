@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>amq.example</groupId>
+    <artifactId>amq.example.act</artifactId>
+    <name>amq.example.act</name>
+    <version>0.0.1-snapshot</version>
+    <properties>
+        <app.entry>amq.example.act.AppStart</app.entry>
+        <act.version>1.8.21</act.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.actframework</groupId>
+            <artifactId>act</artifactId>
+            <version>${act.version}</version>
+        </dependency>
+
+        <!-- AMQ -->
+        <dependency>
+            <groupId>com.github.mailtous.amq</groupId>
+            <artifactId>amq-core</artifactId>
+            <version>0.0.2-snapshot</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <optimize>true</optimize>
+                    <encoding>UTF-8</encoding>
+                    <showWarnings>false</showWarnings>
+                    <showDeprecation>true</showDeprecation>
+                    <meminitial>128m</meminitial><!-- 编译器使用的初始内存 -->
+                    <maxmem>512m</maxmem><!-- 编译器使用的最大内存 -->
+                </configuration>
+                <inherited>true</inherited>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>
